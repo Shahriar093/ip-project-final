@@ -4,42 +4,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href='css/home.css' />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet" />
+    <title>Login Form</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f7f7f7;
+        }
+
+        .login-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .login-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 5px;
+            color: #666;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+            transition: border 0.3s ease;
+        }
+
+        .input-group input:focus {
+            border-color: #007bff;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #049648;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #037a3a;
+        }
+
+        .signup-link {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .signup-link a {
+            color: #448859;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .signup-link a:hover {
+            color: #448859;
+        }
+
+        .small-green-button {
+            background-color: #049648;
+            /* Green background */
+            color: white;
+            /* White text */
+            border: none;
+            /* Remove border */
+            padding: 8px 16px;
+            /* Small padding */
+            font-size: 14px;
+            /* Smaller font size */
+            font-family: 'Arial', sans-serif;
+            /* Clean font */
+            border-radius: 5px;
+            /* Rounded corners */
+            cursor: pointer;
+            /* Pointer cursor */
+            transition: all 0.3s ease;
+            /* Smooth transition for hover */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            /* Subtle shadow */
+        }
+    </style>
 </head>
 
-
 <body>
-    <div class="login_form">
-        <form action="http://localhost:8080/login" method="post">
-            <h1>Login</h1>
-            <div class="box">
-                <input name="number" type="text" placeholder="Phone number" required />
-                <i class="bx bxs-phone"></i>
+
+    <div class="login-container">
+        <form class="login-form" action="http://localhost:8080/login" method="post">
+            <h2>Login</h2>
+
+            <div class="input-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="number" placeholder="Enter phone number" required>
             </div>
-            <div class="box">
-                <input name="password" type="password" placeholder="Password" required />
-                <i class="uil uil-eye-slash hide"></i>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter password" required>
             </div>
-            <div class="remfor">
-                <label><input type="checkbox" />Remember me</label>
-                <a href="#">Forgot password?</a>
-            </div>
+
             <button type="submit" class="btn">Login</button>
         </form>
-        <div class="reglink">
+        <div style="margin: 2rem;">
             <form action="http://localhost:8080/signup" method="get">
                 Don't have an account?
-                <button type="submit">SignUp</button>
+                <button type="submit" class="small-green-button"> SignUp</button>
             </form>
         </div>
+        </p>
     </div>
+
 </body>
 
 </html>

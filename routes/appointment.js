@@ -26,7 +26,7 @@ router.post('/', async (req, res) => {
     });
     await newAppointment.save();
     // console.log(date);
-    res.send('after appointment')
+    res.redirect('/customerprofile');
 });
 
 router.get('/view', async (req, res) => {
@@ -40,10 +40,10 @@ router.get('/view', async (req, res) => {
 router.post('/approve/:id/:docid', async (req, res) => {
     let { id, docid } = req.params;
 
-    let doctor = await DoctorId.findById(docid);
+    let doctor = await DoctorId.find({ doctorId: docid });
 
-    if (!doctor) {
-        return res.send("Sorry, Youre not a doctor");
+    if (doctor.length === 0) {
+        return res.send("Sorry, You're not a doctor");
     }
 
     let apntmnt = await Appointment.findById(id);
@@ -58,8 +58,7 @@ router.post('/approve/:id/:docid', async (req, res) => {
         symptomps: apntmnt.symptomps,
     })
     await nApvrdApntmnt.save();
-    // console.log(id);
-    res.send('appvrd');
+    res.redirect('/');
 })
 
 
