@@ -47,14 +47,14 @@
                 </li>
                 <li><a href="#" class="navbtn">FAQ</a></li>
             </ul>
-            <ul >
+            <ul style="display: flex; margin-left: auto;">
                 <% if(!authenticated) {%>
                     <form action="http://localhost:8080/login" method="get">
                         <button type="submit" class="loginbtn" id="form_open">Login</button>
                     </form>
                     <% } %>
                         <% if(authenticated) {%>
-                            <form action="http://localhost:8080/logout" method="post">
+                            <form action="http://localhost:8080/logout" method="post" style="margin-right: 2rem;">
                                 <button type="submit" class="loginbtn" id="form_open">Logout</button>
                             </form>
                             <form action="http://localhost:8080/customerprofile" method="get">

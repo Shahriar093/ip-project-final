@@ -77,64 +77,138 @@
             font-style: italic;
             color: #666;
         }
+
+        /* Basic reset */
+
+        .mother {
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            /* align-items: center; */
+            height: 50vh;
+        }
+
+        /* Profile card container */
+        .profile-card {
+            background-color: white;
+            width: 45vw;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .profile-card:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Profile image */
+        .profile-image img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            border: 5px solid #049648;
+            /* Green border for profile image */
+        }
+
+        /* Profile name */
+        .profile-info h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        /* Phone number styling */
+        .profile-info p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .profile-info p i {
+            color: #049648;
+            margin-right: 10px;
+        }
+
+        /* Social media icons */
+        .social-media a {
+            color: #049648;
+            font-size: 20px;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .social-media a:hover {
+            color: #037a3a;
+        }
+
+        .small-green-button {
+            background-color: #049648;
+            /* Green background */
+            color: white;
+            /* White text */
+            border: none;
+            /* Remove border */
+            padding: 8px 16px;
+            /* Small padding */
+            font-size: 14px;
+            /* Smaller font size */
+            font-family: 'Arial', sans-serif;
+            /* Clean font */
+            border-radius: 5px;
+            /* Rounded corners */
+            cursor: pointer;
+            /* Pointer cursor */
+            transition: all 0.3s ease;
+            /* Smooth transition for hover */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            /* Subtle shadow */
+        }
+
+        /* Hover effect */
+        .small-green-button:hover {
+            background-color: #037a3a;
+            /* Slightly darker green on hover */
+            transform: scale(1.05);
+            /* Slightly increase size on hover */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            /* Enhance shadow on hover */
+        }
+
+        /* Focus effect */
+        .small-green-button:focus {
+            outline: none;
+            /* Remove default outline */
+            box-shadow: 0 0 8px rgba(4, 150, 72, 0.5);
+            /* Add a glow when focused */
+        }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <header class="header">
-            <h1>User Profile</h1>
-        </header>
-        <section class="profile-info">
-            <h2>Welcome, <span id="username">
-                    <%= user %>
-                </span></h2>
-        </section>
-        <section class="appointments">
-            <div class="approved-appointments">
-                <h3>
-                    <%= aappointments.length %> Approved Appointments
-                </h3>
-                <div id="pending-list" style="max-height: 40vh; overflow:auto">
-                    <% for(appointment of aappointments){ %>
-                        <ul style="border: 1px solid black;">
-                            <li>
-                                Pet - <%= appointment.petname %>
-                            </li>
-                            <li>
-                                Symptomps - <%= appointment.symptomps %>
-                            </li>
-                            <li>
-                                Date - <%= appointment.date %>
-                            </li>
-                        </ul>
-                        <br>
-                        <% } %>
-
-                </div>
+    <div class="mother" style="width: 100vw; text-align: center;">
+        <div class="profile-card">
+            <div class="profile-image">
+                <img src="image/docphoto (1).jpg" alt="Profile Picture">
             </div>
-            <div class="pending-appointments">
-                <h3>
-                    <%= pappointments.length %> Pending Appointments
-                </h3>
-                <div id="pending-list" style="max-height: 40vh; overflow:auto">
-                    <% for(appointment of pappointments){ %>
-                        <ul style="border: 1px solid black;">
-                            <li>
-                                Pet - <%= appointment.petname %>
-                            </li>
-                            <li>
-                                Symptomps - <%= appointment.symptomps %>
-                            </li>
-                            <li>
-                                Date - <%= appointment.date %>
-                            </li>
-                        </ul>
-                        <br>
-                        <% } %>
+            <div class="profile-info">
+                <h2>
+                    <%= user %>
+                </h2>
+                <p>Contact : <%= customer.number %>
+                </p>
+            </div>
+            <div style="width: 100%; display: flex; justify-content: center;">
+                <form action="http://localhost:8080/customerprofile/pending" style="margin: 1rem;">
+                    <button class="small-green-button">Pending Appointments</button>
+                </form>
+                <form action="http://localhost:8080/customerprofile/apprvd" style="margin: 1rem;">
+                    <button class="small-green-button">Approved Appointments</button>
+                </form>
 
-                </div>
-        </section>
+            </div>
+        </div>
     </div>
 </body>
 

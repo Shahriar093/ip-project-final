@@ -9,30 +9,69 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        /* Styling the small green button */
+        .small-green-button {
+            background-color: #049648;
+            /* Green background */
+            color: white;
+            /* White text */
+            border: none;
+            /* Remove border */
+            padding: 8px 16px;
+            /* Small padding */
+            font-size: 14px;
+            /* Smaller font size */
+            font-family: 'Arial', sans-serif;
+            /* Clean font */
+            border-radius: 5px;
+            /* Rounded corners */
+            cursor: pointer;
+            /* Pointer cursor */
+            transition: all 0.3s ease;
+            /* Smooth transition for hover */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            /* Subtle shadow */
+        }
+
+        /* Hover effect */
+        .small-green-button:hover {
+            background-color: #037a3a;
+            /* Slightly darker green on hover */
+            transform: scale(1.05);
+            /* Slightly increase size on hover */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            /* Enhance shadow on hover */
+        }
+
+        /* Focus effect */
+        .small-green-button:focus {
+            outline: none;
+            /* Remove default outline */
+            box-shadow: 0 0 8px rgba(4, 150, 72, 0.5);
+            /* Add a glow when focused */
+        }
+    </style>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg nav-back fixed-top" id="mainNav">
         <div class="container">
             <form style="border: none;" class="nav-link" action="http://localhost:8080/" method="get">
-                <button type="submit">
+                <button class="small-green-button" type="submit">
                     Home
                 </button>
             </form>
             <form style="border: none;" class="nav-link" action="http://localhost:8080/appointment/view" method="get">
-                <button type="submit">
+                <button class="small-green-button" type="submit">
                     View appointments
                 </button>
             </form>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-                aria-label="Toggle navigation"><i class="fas fa-syringe fa-2x"></i>
-            </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Team</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#signup">Contact</a></li>
+                    <button style="margin: 1rem;" class="small-green-button">Services</a></button>
+                    <button style="margin: 1rem;" class="small-green-button">Team</a></button>
+                    <button style="margin: 1rem;" class="small-green-button">Contact</a></button>
                 </ul>
             </div>
         </div>
@@ -40,7 +79,7 @@
     <section id="hero" class="d-flex align-items-center">
         <div class="container text-center position-relative">
             <h1>24/7 Care is available</h1>
-            <a href="#about" class="main-btn">Get Started</a>
+            <button class="small-green-button">Get Started</button>
         </div>
     </section>
     <!-- End Hero -->
@@ -100,7 +139,7 @@
                     <!---->
                     <div class="form-group row justify-content-end">
                         <div class="col-sm-5">
-                            <button type="submit" class="btn btn-form">
+                            <button class="small-green-button" type="submit" class="btn btn-form">
                                 Confirm
                             </button>
                         </div>

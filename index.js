@@ -67,13 +67,7 @@ app.use('/appointment', require('./routes/appointment'));
 app.get('/doctor', (req, res) => {
     res.render('doctor.ejs')
 })
-app.get('/customerprofile', async (req, res) => {
-    let cid = res.locals.id;
-    let result = await Appointment.find({ customerId: cid });
-    let aappointment = await AprvdAppointment.find({ customerId: cid })
-    // console.log(result);
-    res.render('customerprofile.ejs', { pappointments: result, aappointments: aappointment });
-})
+app.use('/customerprofile', require('./routes/customerprofile'));
 app.get('/marketplace', (req, res) => {
     res.render('index.ejs');
 })
