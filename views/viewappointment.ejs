@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th>
+                Date
+            </th>
+            <th>
+                Symptomps
+            </th>
+            <th>
+                Approval
+            </th>
+        </tr>
+        <% for(appointment of appointments){ %>
+            <tr>
+                <td>
+                    Date - <%= appointment.date %>
+                </td>
+                <td>
+                    Symptomps - <%= appointment.symptomps %>
+                </td>
+                <td>
+                    <form action="http://localhost:8080/appointment/approve/<%= appointment._id %>/<%= id %>"
+                        method="post">
+                        <button>Approve</button>
+                    </form>
+                </td>
+            </tr>
+            <% } %>
+    </table>
+</body>
+
+</html>

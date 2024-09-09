@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Consultation</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/appointment.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg nav-back fixed-top" id="mainNav">
+        <div class="container">
+            <form style="border: none;" class="nav-link" action="http://localhost:8080/" method="get">
+                <button type="submit">
+                    Home
+                </button>
+            </form>
+            <form style="border: none;" class="nav-link" action="http://localhost:8080/appointment/view" method="get">
+                <button type="submit">
+                    View appointments
+                </button>
+            </form>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation"><i class="fas fa-syringe fa-2x"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Team</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#signup">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section id="hero" class="d-flex align-items-center">
+        <div class="container text-center position-relative">
+            <h1>24/7 Care is available</h1>
+            <a href="#about" class="main-btn">Get Started</a>
+        </div>
+    </section>
+    <!-- End Hero -->
+    <div class="container mt-4 p-4">
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="text-center my-4">
+                    Find Consultations
+                </h2>
+                <form action="http://localhost:8080/appointment" method="post">
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-lg-4">
+                            Pet Category
+                        </label>
+                        <div class="col-sm-8 col-lg-8">
+                            <input name="petname" type="text" id="patient-name" class="form-control" placeholder="Name"
+                                required>
+                        </div>
+                    </div>
+                    <!---->
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-lg-4">
+                            Contact
+                        </label>
+                        <div class="col-sm-8 col-lg-8">
+                            <input name="number" type="tel" id="contact" class="form-control" placeholder="123"
+                                required>
+                        </div>
+                    </div>
+                    <!---->
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-lg-4">
+                            Date
+                        </label>
+                        <div class="col-sm-8 col-lg-8">
+                            <input name="date" type="date" id="date" class="form-control">
+                        </div>
+                    </div>
+                    <!---->
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-lg-4">
+                            Time
+                        </label>
+                        <div class="col-sm-8 col-lg-8">
+                            <input name="time" type="time" id="time" class="form-control">
+                        </div>
+                    </div>
+                    <!---->
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-lg-4">
+                            Symptoms
+                        </label>
+                        <div class="col-sm-8 col-lg-8">
+                            <textarea name="symptomps" id="symptoms" class="form-control" required></textarea>
+                        </div>
+                    </div>
+                    <!---->
+                    <div class="form-group row justify-content-end">
+                        <div class="col-sm-5">
+                            <button type="submit" class="btn btn-form">
+                                Confirm
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <h2 id="services" class="text-center my-4"></h2>
+                <ul id="consultations" class="list-group"></ul>
+            </div>
+        </div>
+    </div>
+    <footer class="footer py-4 mt-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 my-3 my-lg-0">
+                    <a class="btn btn-back btn-social mx-2" href="#!">
+                        <i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-back btn-social mx-2" href="#!">
+                        <i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-back btn-social mx-2" href="#!">
+                        <i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <div class="col-lg-4 text-lg-right">
+
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

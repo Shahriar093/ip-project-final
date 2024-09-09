@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-info {
+            margin-bottom: 30px;
+        }
+
+        .profile-info h2 {
+            font-size: 24px;
+            color: #555;
+        }
+
+        .profile-info #username {
+            font-weight: bold;
+        }
+
+        .pappointments {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .pappointments>div {
+            width: 45%;
+        }
+
+        h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            padding: 10px;
+            margin-bottom: 8px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .date {
+            font-style: italic;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>User Profile</h1>
+        </header>
+        <section class="profile-info">
+            <h2>Welcome, <span id="username">
+                    <%= user %>
+                </span></h2>
+        </section>
+        <section class="appointments">
+            <div class="approved-appointments">
+                <h3>
+                    <%= aappointments.length %> Approved Appointments
+                </h3>
+                <div id="pending-list" style="max-height: 40vh; overflow:auto">
+                    <% for(appointment of aappointments){ %>
+                        <ul style="border: 1px solid black;">
+                            <li>
+                                Pet - <%= appointment.petname %>
+                            </li>
+                            <li>
+                                Symptomps - <%= appointment.symptomps %>
+                            </li>
+                            <li>
+                                Date - <%= appointment.date %>
+                            </li>
+                        </ul>
+                        <br>
+                        <% } %>
+
+                </div>
+            </div>
+            <div class="pending-appointments">
+                <h3>
+                    <%= pappointments.length %> Pending Appointments
+                </h3>
+                <div id="pending-list" style="max-height: 40vh; overflow:auto">
+                    <% for(appointment of pappointments){ %>
+                        <ul style="border: 1px solid black;">
+                            <li>
+                                Pet - <%= appointment.petname %>
+                            </li>
+                            <li>
+                                Symptomps - <%= appointment.symptomps %>
+                            </li>
+                            <li>
+                                Date - <%= appointment.date %>
+                            </li>
+                        </ul>
+                        <br>
+                        <% } %>
+
+                </div>
+        </section>
+    </div>
+</body>
+
+</html>

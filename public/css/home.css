@@ -1,0 +1,315 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.logo {
+    width: 200px;
+}
+
+nav {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 400;
+}
+
+.banner {
+    min-height: 100vh;
+    background-position: center;
+    background-size: cover;
+    padding: 10px 3%;
+    overflow: hidden;
+    /* background-image: url('image/bg.png'); */
+    background-attachment: fixed;
+}
+
+.loginbtn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.navbtn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #23bf45;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.loginbtn:hover {
+    background-color: #0056b3;
+}
+
+.navbtn:hover {
+    background-color: #c0c02d;
+}
+
+.content {
+    margin-top: 10%;
+    max-width: 640px;
+}
+
+.content h1 {
+    font-size: 40px;
+    color: #222;
+}
+
+.content p {
+    margin: 20px 0 30px;
+    color: #333;
+    animation-delay: 0.5s;
+}
+
+.hero {
+    width: 340px;
+    position: absolute;
+    bottom: 0;
+    right: 12%;
+    background-image: url();
+}
+
+.anim {
+    opacity: 0;
+    transform: translateY(60px);
+    animation: moveup 1s linear forwards;
+}
+
+@keyframes moveup {
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+footer {
+    margin-top: 50vh;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+footer .col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+footer .col .logo img {
+    height: 55px;
+    width: 100px;
+}
+
+footer .col img {
+    height: 65px;
+    width: 170px;
+}
+
+footer .install .row img {
+    height: 65px;
+    width: 150px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 2px solid rgb(2, 128, 142);
+    border-radius: 2%;
+}
+
+footer h4 {
+    font-size: 14px;
+    padding-bottom: 20px;
+}
+
+footer p {
+    font-size: 13px;
+    margin-bottom: 0 0 8px 0;
+}
+
+footer a {
+    text-decoration: none;
+    font-size: 13px;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+footer .follow i {
+    cursor: pointer;
+    padding-right: 4px;
+    color: #465b52;
+}
+
+footer .follow i:hover,
+footer a:hover {
+    color: #088178;
+}
+
+footer .copyright {
+    width: 100%;
+    text-align: center;
+}
+
+/* forms */
+
+.form_container {
+    position: absolute;
+    width: 100%;
+    max-width: 320px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.2);
+    z-index: 101;
+    backdrop-filter: blur(15px);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s ease-out;
+}
+
+.home.show .form_container {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.signup_form {
+    display: none;
+}
+
+.form_container.active .signup_form {
+    display: block;
+}
+
+.form_container.active .login_form {
+    display: none;
+}
+
+.form_close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: black;
+    font-size: 22px;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.form_container h1 {
+    font-size: 32px;
+    color: black;
+    text-align: center;
+}
+
+.box {
+    position: relative;
+    margin-top: 30px;
+    width: 100%;
+    height: 40px;
+    font-weight: 200;
+}
+
+.box input {
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    border: 2px solid grey;
+    border-radius: 50px;
+    font-size: 15px;
+    color: black;
+    padding: 20px 45px 20px 20px;
+}
+
+.box i {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #707070;
+}
+
+.box input::placeholder {
+    color: black;
+}
+
+.login_form .remfor {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 15px 0 15px;
+    text-decoration: none;
+    font-size: 13.5px;
+}
+
+.signup_form .remfor {
+    font-size: 13.5px;
+    margin: 15px 0 15px;
+}
+
+.remfor label input {
+    accent-color: black;
+    margin-right: 3px;
+}
+
+.form_container a {
+    text-decoration: none;
+}
+
+.form_container a:hover {
+    text-decoration: underline;
+}
+
+.form_container .btn {
+    width: 100%;
+    height: 45px;
+    background: white;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+    transition: 0.4s;
+}
+
+.form_container .btn:hover {
+    opacity: 0.8;
+    background: blue;
+    color: white;
+}
+
+.form_container .reglink {
+    font-size: 14.5px;
+    text-align: center;
+    margin: 15px 0 5px;
+}

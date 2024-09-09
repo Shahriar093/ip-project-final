@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VetCare</title>
+    <link rel="stylesheet" href='css/home.css' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet" />
+    <!-- <link rel="stylesheet" href="index/style.css" /> -->
+</head>
+
+<body>
+    <div class="banner">
+        <nav>
+            <form action="http://localhost:8080/" method="get">
+                <button class="active" type="submit" class="navbtn">
+                    <img src="image/logo.png" class="logo" />
+                </button>
+            </form>
+            <ul>
+                <li>
+                    <form action="http://localhost:8080/appointment" method="get">
+                        <button type="submit" class="navbtn">
+                            Appointment
+                        </button>
+                    </form>
+                </li>
+                <li>
+                    <form action="http://localhost:8080/doctor" method="get">
+                        <button type="submit" class="navbtn">
+                            Doctors
+                        </button>
+                    </form>
+                </li>
+                <li>
+                    <form action="http://localhost:8080/marketplace" method="get">
+                        <button type="submit" class="navbtn">
+                            Marketplace
+                        </button>
+                    </form>
+                </li>
+                <li><a href="#" class="navbtn">FAQ</a></li>
+            </ul>
+            <ul >
+                <% if(!authenticated) {%>
+                    <form action="http://localhost:8080/login" method="get">
+                        <button type="submit" class="loginbtn" id="form_open">Login</button>
+                    </form>
+                    <% } %>
+                        <% if(authenticated) {%>
+                            <form action="http://localhost:8080/logout" method="post">
+                                <button type="submit" class="loginbtn" id="form_open">Logout</button>
+                            </form>
+                            <form action="http://localhost:8080/customerprofile" method="get">
+                                <button type="submit" class="loginbtn" id="form_open">Profile</button>
+                            </form>
+
+                            <% } %>
+            </ul>
+
+        </nav>
+
+        <!-- forms -->
+
+        <section class="home">
+            <div class="form_container">
+                <i class="uil uil-times form_close" id="close"></i>
+                <!-- Signup-form -->
+
+
+            </div>
+        </section>
+
+        <div class="content">
+            <h1 class="anim">Your Online Pet Doctor Is Here</h1>
+            <p class="anim">
+                Discover convenient and compassionate veterinary care online. Our
+                platform offers easy appointment scheduling, expert advice, and
+                marketplace for your beloved pets. Trust us for their well-being,
+                anytime, anywhere
+            </p>
+            <a href="#" class="loginbtn anim">About Us</a>
+            <div>
+                <img src="image/hero.png" class="hero anim" />
+            </div>
+        </div>
+        <!-- <img src="hero.png" class="hero anim" /> -->
+        <footer class="section-p1">
+            <div class="col">
+                <!-- <div class="logo">
+            <img src="image/logo.png" alt="" />
+          </div> -->
+                <h4>Contact</h4>
+                <p>
+                    <strong>Address : </strong>Chittagong University of Engineering and
+                    Technology, Chittagong-4349
+                </p>
+                <p><strong>Phone : </strong>+8801309700124 / +880123456789</p>
+                <div class="follow">
+                    <h4>Follow us</h4>
+                    <div class="icon">
+                        <i class="fa fa-facebook"></i>
+                        <i class="fa fa-twitter"></i>
+                        <i class="fa fa-google"></i>
+                        <i class="fa fa-instagram"></i>
+                        <i class="fa fa-youtube"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <h4>About</h4>
+                <a href="#">About Us</a>
+                <a href="#">Delivery Information</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms and conditions</a>
+                <a href="#">Contact Us</a>
+            </div>
+            <div class="col">
+                <h4>My Account</h4>
+                <a href="#">Sign in</a>
+                <a href="#">View cart</a>
+                <a href="#">My whitelist</a>
+                <a href="#">Track my order</a>
+                <a href="#">Help</a>
+            </div>
+            <div class="col install">
+                <h4>Install App</h4>
+                <p>From App Store or Google Play</p>
+                <div class="row">
+                    <img src="image/play.png" alt="" />
+                    <img src="image/appstore.png" alt="" />
+                </div>
+                <p>Secured Payment Gateways</p>
+                <img src="image/pay.png" alt="" />
+            </div>
+            <div class="copyright">
+                <p><i class="fa fa-copyright"></i> 2024, VetCare Website</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+<script src="Jscript.js"></script>
+
+</html>

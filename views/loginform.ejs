@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href='css/home.css' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet" />
+</head>
+
+
+<body>
+    <div class="login_form">
+        <form action="http://localhost:8080/login" method="post">
+            <h1>Login</h1>
+            <div class="box">
+                <input name="number" type="text" placeholder="Phone number" required />
+                <i class="bx bxs-phone"></i>
+            </div>
+            <div class="box">
+                <input name="password" type="password" placeholder="Password" required />
+                <i class="uil uil-eye-slash hide"></i>
+            </div>
+            <div class="remfor">
+                <label><input type="checkbox" />Remember me</label>
+                <a href="#">Forgot password?</a>
+            </div>
+            <button type="submit" class="btn">Login</button>
+        </form>
+        <div class="reglink">
+            <form action="http://localhost:8080/signup" method="get">
+                Don't have an account?
+                <button type="submit">SignUp</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
